@@ -301,10 +301,122 @@
 //     int arr[2][3]={1,2,3,4,5,6};
 //     int (*p)[3]= NULL;
 //     p=arr;
-//     printf("p= %d\n, *p= %d\n, *(p[1]+2)= %d\n, *p+2= %d\n", p, *p, *(p[1]+2), *p+2);
-//     printf("*(*(p+1)+1)= %d\n, **p= %d\n, p+2= %d\n", *(*(p+1)+1), **p, p+2);
-//     printf("*(*p+1))=%d\n, *(*(p+1))=%d\n", *(*p+1), *(*(p+1)));
+//     printf("p= %d\n*p= %d\n**p= %d\n", p, *p, **p);
+//     printf("*p+2= %d\np+2= %d\n*(p[1]+2)= %d\n", *p+2, p+2, *(p[1]+2));
+//     printf("*(*p+1))= %d\n*(p+1)= %d\n*(*(p+1))= %d\n*(*(p+1)+1)= %d\n", *(*p+1), *(p+1), *(*(p+1)), *(*(p+1)+1));
 // }
+
+//38번
+// void fn(char *d, const char *s){
+//     while(*s){
+//         *d=*s;
+//         d++;
+//         s++;
+//     }
+//     *d='\0';
+// }
+// int main(){
+//     const char* str1="first";
+//     char str2[50]="teststring";
+//     int res=0, i;
+//     fn(str2, str1);
+//     for(i=0; str2[i]!='\0'; i++)
+//         res+=i;
+//     printf("%d", res);
+//     return 0;
+// }
+
+
+//39번
+// void swap(int a, int b){
+//     int t=a;
+//     a=b; 
+//     b=t;
+// }
+// int main(){
+//     int a=11;
+//     int b=19;
+//     swap(a, b);
+//     switch(a){
+//         case 19:
+//             b+=1;
+//         case 11:
+//             b+=2;
+//         default:
+//             b+=3;
+//     }
+//     printf("%d", a-b);
+//     return 0;
+// }
+//swith에서 break 또는 default 조건 항상 확인.
+//break 없으면 Fall Through 발생> 다음 case 계속 진행.
+
+
+//40번
+// struct n{
+//     int n1;
+//     struct n *n2;
+// };
+// int main(){
+//     struct n *h=NULL;
+//     struct n a={10, 0};
+//     struct n b={20, 0};
+//     struct n c={30, 0};
+//     h=&a;
+//     a.n2=&b;
+//     b.n2=&c;
+//     printf("%d", h->n2->n1);
+//     return 0;
+// }
+
+
+//41번
+// int increase(){
+//     static int x=0;
+//     x+=2;
+//     return x;
+// }
+// int main(){
+//     int x=0, sum=0, i=0;
+//     for(i=0; i<4; i++){
+//         x++;
+//         sum+=increase();
+//     }
+//     printf("%d", sum);
+//     return 0;
+// }
+
+//42번
+// struct Node{
+//     int v;
+//     struct Node* next; };
+// void func(struct Node* n){
+//     while(n!=NULL && n->next!=NULL){
+//         int t=n->v;
+//         n->v=n->next->v;
+//         n->next->v=t;
+//         n=n->next->next;
+//     }
+// }
+// int main(){
+//     struct Node n1={1, NULL};
+//     struct Node n2={2, NULL};
+//     struct Node n3={3, NULL};
+//     struct Node* c=&n1;
+//     n1.next=&n3; //연결
+//     n3.next=&n2;
+//     func(&n1);
+//     while(c != NULL){
+//         printf("%d", c->v);
+//         c=c->next;
+//     }
+//     return 0;
+// }
+//n은 노드를 가리키는 포인터(=화살표. 가리키는 손가락)일 뿐. n1, n2.. 가 노드 자체.
+//n=n->next->next; //n이 어디를 보고있느냐. 다음 작업할 위치를 이동하는 코드.
+
+
+
 
 
 
