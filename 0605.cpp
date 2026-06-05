@@ -415,8 +415,44 @@
 //n은 노드를 가리키는 포인터(=화살표. 가리키는 손가락)일 뿐. n1, n2.. 가 노드 자체.
 //n=n->next->next; //n이 어디를 보고있느냐. 다음 작업할 위치를 이동하는 코드.
 
+//43번
+// void func(int **arr, int size){
+//     int i;
+//     for(i=0; i<size; i++){
+//         *(*arr+i) = (*(*arr+i)+i) % size;
+//     }
+// }
+// int main(){
+//     int arr[]={3,1,4,1,5};
+//     int *p=arr;
+//     int **pp=&p; //**pp=p. p=arr[0]. 따라서, **pp=arr[0]
+//     func(pp, 5);
+//     printf("%d", arr[2]);
+//     return 0;
+// }
 
 
-
-
+//44번
+char Data[5]={'B','A','D','E'};
+char c;
+int main(){
+    int i, tmp1, tmp2;
+    c= 'C';
+    printf("%d\n", Data[3]-Data[1]);
+    for(i=0; i<5; ++i){
+        if(Data[i]>c) break;
+    }
+    tmp1=Data[i];
+    Data[i]=c;
+    i++;
+    for(; i<5; ++i){
+        tmp2=Data[i];
+        Data[i]=tmp1;
+        tmp1=tmp2;
+    }
+    for(i=0; i<5; i++){
+        printf("%c", Data[i]);
+    }
+    return 0;
+}
 
