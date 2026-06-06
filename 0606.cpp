@@ -232,6 +232,100 @@
 // }
 
 
+//천기누설
+
+//1번
+// int sjb(int num){
+//     int i;
+//     for(i=2; i<num; i++){
+//         if(num%i==0) return 0;
+//     }
+//     return 1;
+// }
+// int main(){
+//     int num=10, cnt=0, i;
+//     for(i=2; i<num; i++)
+//         cnt+=sjb(i);
+//     printf("%d\n", cnt);
+//     return 0;
+// }
+
+
+//2번
+// #include <time.h>
+// int main(){
+//     int his[6] = {0,};
+//     int n, i = 0;
+//     srand(time(NULL));
+//     do{
+//       i++;
+//       n = rand()%6 + 1;
+//       his[???] += 1;
+//     } while (i<10);
+//     for(i=0; i<6; i++)
+//         printf("[%d] 발생 횟수=%d\n", i+1, ???);
+//     return 0;
+// }
+
+
+//3번
+// int main(){
+//     char ch, str[]="12345000";
+//     int i, j;
+//     for(i=0; i<8; i++){
+//         ch=str[i];
+//         if( ???? ) break;
+//     }
+//     for(j=0; j<i; j++){
+//         i--;
+//         ch = str[j];
+//         str[j] = str[i];
+//         str[i] = ch;
+//     }
+//     printf("%s", str);
+//     return 0;
+// }
+
+
+//4번
+// int main(){
+//     char str1[20] = "KOREA";
+//     char str2[20] = "LOVE";
+//     char *p1 = NULL;
+//     char *p2 = NULL;
+//     p1 = str1;
+//     p2 = str2;
+//     str1[1] = p2[2];
+//     str2[3] = p1[4];
+//     strcat(str1, str2);
+//     printf("%c", *(p1+2));
+//     return 0;
+// }
+
+
+//5번
+// int main(){
+//     int arr[2][3] = {1,2,3,4,5,6};
+//     int (*p)[3] = NULL;
+//     p=arr;
+//     printf("%d", *(p[0]+1)+*(p[1]+2));
+//     printf("%d", *(*(p+1)+0) + *(*(p+1)+1));
+//     return 0;
+// }
+//123 = arr[0] = p[0]  / 456 = arr[1] = p[1]
+
+
+//6번
+int main(){
+    int n1=1, n2=2, n3=3;
+    int r1, r2, r3;
+    r1 = (n2<=2) || (n3>3);
+    r2 = !n3;
+    r3 = (n1>1) && (n2<3);
+    printf("%d", r3-r2+r1);
+    return 0;
+}
+
 
 
 
