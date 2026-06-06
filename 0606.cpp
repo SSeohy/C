@@ -7,3 +7,8 @@
 #include <numeric>
 #include <iomanip>
 #include <map>
+
+
+int main(){
+    printf("0606");
+}
